@@ -1,0 +1,35 @@
+@import 'variables.scss';
+
+body {
+  font-family: $font-family;
+}
+
+#root {
+  width: 100%;
+
+  @media (min-width: $desktop-screen) {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .header {
+
+    @media (min-width: $desktop-screen) {
+
+    }
+  }
+
+  .main {
+
+    @media (min-width: $desktop-screen) {
+
+    }
+  }
+
+  .footer {
+
+    @media (min-width: $desktop-screen) {
+
+    }
+  }
+}
