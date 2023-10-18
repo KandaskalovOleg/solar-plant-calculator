@@ -1,7 +1,7 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import enTranslations from './../public/locales/en.json';
-import ukTranslations from './../public/locales/uk.json';
+import enTranslations from './locales/en.json';
+import ukTranslations from './locales/uk.json';
 
 const options = {
   order: ['navigator', 'localStorage', 'querystring', 'cookie', 'sessionStorage', 'htmlTag', 'path', 'subdomain'],

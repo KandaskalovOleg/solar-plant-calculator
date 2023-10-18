@@ -1,0 +1,5 @@
+{
+  "header": ["Home", "Calculator", "Contacts"],
+  "settings": ["Profile", "Account", "Logout"],
+  "greeting": "Hello, World!"
+}

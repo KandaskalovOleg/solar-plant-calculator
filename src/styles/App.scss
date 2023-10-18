@@ -5,40 +5,15 @@ body {
 }
 
 #root {
-  width: 100%;
-  margin: 0 auto;
   background-color: aqua;
 
-  @media (min-width: $desktop-screen) {
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  .header {
-    position: fixed;
-    background-color: $primary-background;
-    width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    @media (min-width: $desktop-screen) {
-      
-    }
-  }
-
   .main {
-    padding-top: $headerHeight-desctop;
-
     @media (min-width: $desktop-screen) {
-      padding-top: $headerHeight-mobile;
     }
   }
 
   .footer {
-
     @media (min-width: $desktop-screen) {
-
     }
   }
 }
