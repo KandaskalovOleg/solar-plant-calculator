@@ -7,10 +7,10 @@ import { Footer } from './components/Footer/Footer';
 export const App: React.FC = () => {
 
   return (
-    <>
+    <div className='app-container'>
       <Header />
       <Main />
       <Footer />
-    </>
+    </div>
   )
 }

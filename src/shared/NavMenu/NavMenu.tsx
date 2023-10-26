@@ -80,10 +80,9 @@ export const NavMenu: React.FC = () => {
               }}
             >
               {pagesEn.map((page) => (
-                <Link to={page[1].toLowerCase()} key={page[1]} style={{ textDecoration: 'none' }}
-                >
-                  <MenuItem onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center" sx={{ color: '#000000' }}>
+                <Link className='link' to={page[1].toLowerCase()} key={page[1]} style={{ textDecoration: 'none' }}>
+                  <MenuItem onClick={handleCloseNavMenu} sx={{ color: '#000000' }}>
+                    <Typography textAlign="center" sx={{ color: '#000000', m: 1 }}>
                       {page[0]}
                     </Typography>
                   </MenuItem>

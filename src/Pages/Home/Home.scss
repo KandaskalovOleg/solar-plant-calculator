@@ -1,0 +1,58 @@
+@import './../../styles/variables.scss';
+
+.title {
+  font-size: $sizeL-mobile;
+  line-height: $heightL-mobile;
+
+  margin: 0 auto;
+  color: black;
+  font-weight: $weight-semi-bold;
+
+  @media (min-width: $desktop-screen) {
+    font-size: $sizeL-desktop;
+    line-height: $heightL-desktop;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  gap: 20px;
+
+  @media (min-width: $desktop-screen) {
+    flex-direction: row;
+    gap: 60px;
+  }
+
+  .description-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 2;
+
+    .description-text {
+      font-size: $sizeM-mobile;
+      line-height: $heightM-mobile;
+      font-weight: $weight-regular;
+      color: $secondary-text;
+      
+      @media (min-width: $desktop-screen) {
+        font-size: $sizeM-desktop;
+        line-height: $heightM-desktop;
+      }
+    }
+  }
+
+  .description-image {
+    display: flex;
+    flex: 1;
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+}

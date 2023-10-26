@@ -5,15 +5,71 @@ body {
 }
 
 #root {
-  background-color: aqua;
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100dvh);
 
-  .main {
     @media (min-width: $desktop-screen) {
+      
     }
-  }
 
-  .footer {
-    @media (min-width: $desktop-screen) {
+    .main {
+      flex-grow: 1;
+
+      .page-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 30px;
+        gap: 30px;
+
+        @media (min-width: $desktop-screen) {
+          gap: 60px;
+        }
+      }
+
+      h2 {
+        font-size: $sizeL-mobile;
+        line-height: $heightL-mobile;
+        font-weight: $weight-semi-bold;
+        color: $secondary-text;
+        
+        @media (min-width: $desktop-screen) {
+          font-size: $sizeL-desktop;
+          line-height: $heightL-desktop;
+        }
+      }
+
+      h3 {
+        font-size: $sizeM-mobile;
+        line-height: $heightM-mobile;
+        font-weight: $weight-semi-bold;
+        color: $secondary-text;
+        
+        @media (min-width: $desktop-screen) {
+          font-size: $sizeM-desktop;
+          line-height: $heightM-desktop;
+        }
+      }
+
+      span {
+        font-size: $sizeS-mobile;
+        line-height: $heightS-mobile;
+        font-weight: $weight-regular;
+        color: $secondary-text;
+        
+        @media (min-width: $desktop-screen) {
+          font-size: $sizeS-desktop;
+          line-height: $heightS-desktop;
+        }
+      }
+    }
+
+    .footer {
+      background-color: aqua;
+      @media (min-width: $desktop-screen) {
+      }
     }
   }
 }

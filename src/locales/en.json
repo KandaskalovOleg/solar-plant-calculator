@@ -1,5 +1,16 @@
 {
   "header": ["Home", "Calculator", "Contacts"],
   "settings": ["Profile", "Account", "Logout"],
-  "greeting": "Hello, World!"
+  "greeting": "Hello, World!",
+  "contacts": "contacts",
+  "description": "Project Solar Plant Calculator is designed to provide users with the ability to quickly and conveniently forecast the amount of electricity generated from various types of solar panels and inverters. Our calculator helps solar power station owners determine how much electricity they can generate based on geographic location, panel tilt angle, coverage area, and other parameters. You can easily calculate potential savings or earnings. Our calculator is a powerful tool for making decisions regarding the use of solar energy.",
+  "locations" : {
+    "lat": 54.0,
+    "lng": -2.0
+  },
+  "location" : {
+    "title" : "Location",
+    "heading" : "Please enter solar plant location:",
+    "description": "The location will be used to estimate the annual sun exposure (solar radiation), which will be used for further calculations"
+  }
 }

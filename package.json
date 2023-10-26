@@ -13,12 +13,17 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.13",
     "@mui/material": "^5.14.13",
+    "@react-google-maps/api": "^2.19.2",
     "i18next": "^23.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
+    "install": "^0.13.0",
+    "npm": "^10.2.1",
     "react": "^18.2.0",
+    "react-cool-onclickoutside": "^1.7.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^13.3.0",
-    "react-router-dom": "^6.16.0"
+    "react-router-dom": "^6.16.0",
+    "use-places-autocomplete": "^4.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",

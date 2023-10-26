@@ -1,0 +1,72 @@
+@import './../../styles/variables.scss';
+
+.chose-location {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (min-width: $desktop-screen) {
+    flex-direction: row;
+    height: auto;
+  }
+
+  .autocomplete {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: $blockHeight-mobile;
+    gap: 5px;
+
+    @media (min-width: $desktop-screen) {
+      gap: 10px;
+      height: $blockHeight-desktop;
+      width: 50%;
+      padding-right: 20px;
+    }
+
+    .autocomplete-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 0 auto;
+      height: 100%;
+    }
+  }
+
+  .google-map-wrapper {
+    height: $blockHeight-mobile;
+
+    @media (min-width: $desktop-screen) {
+      position: absolute;
+      right: 0;
+      height: $blockHeight-desktop;
+      width: 50%;
+      transition: width $transition-map; 
+
+      &:hover {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.li-autocomplete {
+  background-color: #f7f7f7;
+  padding: 5px;
+  font-size: $sizeS-mobile;
+  line-height: $heightS-mobile;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+
+  @media (min-width: $desktop-screen) {
+    font-size: $sizeS-desktop;
+    line-height: $heightS-desktop;
+  }
+}
+
+.Mui-focused {
+  color: red;
+}

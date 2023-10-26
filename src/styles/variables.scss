@@ -1,4 +1,4 @@
-$desktop-screen: 600px;
+$desktop-screen: 900px;
 $headerHeight-desktop: 64px;
 $headerHeight-mobile: 48px;
 
@@ -6,7 +6,7 @@ $primary-background: #F6DE01; //F9D32E
 $secondary-background: #00843D;
 
 $primary-text: #000000;
-$secondary-text: #939393;
+$secondary-text: #333333;
 $description-text: #FFFFFF;
 
 $font-family: 'Roboto', sans-serif;
@@ -19,15 +19,19 @@ $sizeS-mobile: 12px;
 $sizeM-mobile: 14px;
 $sizeL-mobile: 16px;
 
-$heightS-desktop: 14px;
-$heightM-desktop: 18px;
-$heightL-desktop: 20px;
+$heightS-desktop: 18px;
+$heightM-desktop: 22px;
+$heightL-desktop: 24px;
 
-$heightS-mobile: 12px;
-$heightM-mobile: 14px;
-$heightL-mobile: 16px;
+$heightS-mobile: 16px;
+$heightM-mobile: 18px;
+$heightL-mobile: 20px;
 
 $weight-regular: 400;
 $weight-semi-bold: 700;
 
 $transition: 0.3s;
+$transition-map: 0.5s;
+
+$blockHeight-mobile: 40dvh;
+$blockHeight-desktop: 400px;
