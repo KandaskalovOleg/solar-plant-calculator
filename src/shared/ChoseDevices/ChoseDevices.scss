@@ -1,0 +1,14 @@
+@import './../../styles/variables.scss';
+
+.chose-devices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+
+  @media (min-width: $desktop-screen) {
+    gap: 15px;
+    width: 400px;
+  }
+
+}

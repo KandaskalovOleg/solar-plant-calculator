@@ -9,14 +9,15 @@ import usePlacesAutocomplete, {
   getLatLng,
 } from "use-places-autocomplete";
 import useOnclickOutside from "react-cool-onclickoutside";
-import Input from '@mui/material/Input';
 import List from '@mui/material/List';
+import { TextField } from '@mui/material';
 
 interface ChoseLocationProps {
   center: Location;
   isLoaded: unknown;
   onSelect: (coordinates: Location) => void;
   setCoordinates: (coordinates: Location) => void;
+  isXs: boolean;
 }
 
 interface Location {
@@ -48,7 +49,8 @@ export const ChoseLocation: React.FC<ChoseLocationProps> = ({
   center, 
   isLoaded, 
   onSelect,
-  setCoordinates 
+  setCoordinates,
+  isXs
 }) => {
   const { t } = useTranslation();
   const [zoom, setZoom] = React.useState(6);
@@ -101,7 +103,7 @@ export const ChoseLocation: React.FC<ChoseLocationProps> = ({
   };
   
   const renderSuggestions = () =>
-  data.slice(0, 3).map((suggestion) => {
+  data.map((suggestion) => {
     const {
       place_id,
       structured_formatting: { main_text, secondary_text },
@@ -139,23 +141,35 @@ export const ChoseLocation: React.FC<ChoseLocationProps> = ({
         <h3>{t('location.heading')}</h3>
         <span>{t('location.description')}</span>
         <div className='autocomplete-wrapper'>
-          <Input 
+          <TextField
+            id="outlined-basic" 
+            label={t('location.heading')} 
+            size={isXs ? 'small' : 'medium'}
+            variant="outlined" 
             type="text" 
-            name="" 
-            id=""
             value={value}
             onChange={handleInput}
             disabled={!ready}
-            placeholder={t('location.heading')}
-            className="mui-input"
+            InputLabelProps={{
+              style: { color: '#333333' }
+            }}
             sx={{
-              '&:after' : {
-                borderColor: '#F6DE01',
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#F6DE01',
+                  color: '#F6DE01',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#F6DE01',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#F6DE01',
+                },
               },
             }}
           />
           {status === "OK" && (
-            <List style={{ borderColor: '#000' }}>
+            <List className='place-list'>
               {renderSuggestions()}
             </List>
           )}
