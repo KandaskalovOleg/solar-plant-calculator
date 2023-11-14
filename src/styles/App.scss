@@ -53,11 +53,22 @@ body {
         }
       }
 
+      p {
+        font-size: $sizeM-mobile;
+        line-height: $heightM-mobile;
+        color: $secondary-text;
+        
+        @media (min-width: $desktop-screen) {
+          font-size: $sizeM-desktop;
+          line-height: $heightM-desktop;
+        }
+      }
+
       span {
         font-size: $sizeS-mobile;
         line-height: $heightS-mobile;
         font-weight: $weight-regular;
-        color: $secondary-text;
+        //color: $secondary-text;
         
         @media (min-width: $desktop-screen) {
           font-size: $sizeS-desktop;

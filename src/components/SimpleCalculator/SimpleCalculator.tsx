@@ -5,6 +5,7 @@ import { ChoseLocation } from '../../shared/ChoseLocation/ChoseLocation';
 import { ChoseDevices } from '../../shared/ChoseDevices/ChoseDevices';
 import { useJsApiLoader } from '@react-google-maps/api';
 import { useMediaQuery, useTheme } from '@mui/material';
+import { PositionStation } from '../../shared/PositionStation/PositionStation';
 const API_KEY = import.meta.env.VITE_GOOGLE_API_KEY;
 
 interface SelectedDevices {
@@ -60,6 +61,9 @@ export const SimpleCalculator: React.FC = () => {
             [type]: value,
           }));
         }}
+      />
+      <PositionStation 
+        isXs={isXs}
       />
     </div>
   );

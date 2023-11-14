@@ -1,0 +1,117 @@
+@import './../../styles/variables.scss';
+
+.position-station {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+
+  .parameters-station {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @media (min-width: $desktop-screen) {
+      min-width: 400px;
+      width: 40%;
+      gap: 20px;
+    }
+  }
+
+  @media (min-width: $desktop-screen) {
+    flex-direction: row;
+    gap: 120px;
+  }
+
+  .visual-station {
+    margin: 0 auto;
+    position: relative;
+
+    .compass-container {
+      position: relative;
+      z-index: 1;
+
+      .compass-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .compass-label {
+        position: absolute;
+        text-align: center;
+      }
+      
+      .c-n {
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%) rotate(0deg);
+      }
+
+      .c-ne {
+        top: 16%;
+        right: 16%;
+        transform: translate(-16%) rotate(225deg);
+      }
+      
+      .c-e {
+        top: 50%;
+        right: 5%;
+        transform: translate(0, -50%) rotate(270deg);
+      }
+
+      .c-se {
+        bottom: 16%;
+        right: 16%;
+        transform: translate(-16%) rotate(315deg);
+      }
+      
+      .c-s {
+        bottom: 5%;
+        left: 50%;
+        transform: translate(-50%) rotate(360deg);
+      }
+
+      .c-sw {
+        bottom: 16%;
+        left: 16%;
+        transform: translate(-16%) rotate(45deg);
+      }
+
+      .c-w {
+        top: 50%;
+        left: 5%;
+        transform: translate(0, -50%) rotate(90deg);
+      }
+      
+      .c-nw {
+        top: 16%;
+        left: 16%;
+        transform: translate(-16%) rotate(135deg);
+      }
+    }
+    
+    .panels {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      perspective: 400px;
+      z-index: 2; 
+
+      .panel-img {
+        width: 100%;
+        height: auto;
+      }
+
+      .sun-img {
+        display: block;
+        margin: 20px auto 0;
+        width: 20%;
+        transform: rotateX(0deg);
+        border-radius: 50%;
+        box-shadow: 0px -62px 70px 10px #FFE15D;
+      }
+    }
+  }
+}

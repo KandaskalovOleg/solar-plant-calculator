@@ -4,27 +4,16 @@ import './ChoseDevices.scss';
 import { renderAutocomplete } from './renderAutocomplete';
 
 const options1 = [
-  { label: 'The Godfather' },
-  { label: 'Pulp Fiction' },
-  { label: 'The Godfather' },
-  { label: 'Pulp Fiction' },
-  { label: 'The Godfather' },
-  { label: 'Pulp Fiction' },
-  { label: 'The Godfather' },
-  { label: 'Pulp Fiction' },
-  { label: 'The Godfather' },
+  { label: 'Huawei SUN2000-5KTL' },
+  { label: 'Huawei SUN2000-20KTL' },
+  { label: 'Huawei SUN2000-36KTL' },
+  { label: 'Huawei SUN2000-60KTL' },
 ];
 
 const options2 = [
-  { label: 'The Godfather' },
-  { label: 'Pulp Fiction' },
-  { label: 'The Godfather' },
-  { label: 'Pulp Fiction' },
-  { label: 'The Godfather' },
-  { label: 'Pulp Fiction' },
-  { label: 'The Godfather' },
-  { label: 'Pulp Fiction' },
-  { label: 'The Godfather' },
+  { label: 'Risen Energy RSM60-6-310P' },
+  { label: 'Risen Energy RSM60-6-320P' },
+  { label: 'Risen Energy RSM60-6-330P' },
 ];
 
 const options3 = [

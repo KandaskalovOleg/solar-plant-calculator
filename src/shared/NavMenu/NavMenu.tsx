@@ -81,8 +81,8 @@ export const NavMenu: React.FC = () => {
             >
               {pagesEn.map((page) => (
                 <Link className='link' to={page[1].toLowerCase()} key={page[1]} style={{ textDecoration: 'none' }}>
-                  <MenuItem onClick={handleCloseNavMenu} sx={{ color: '#000000' }}>
-                    <Typography textAlign="center" sx={{ color: '#000000', m: 1 }}>
+                  <MenuItem onClick={handleCloseNavMenu} sx={{ color: 'var(--header-title)' }}>
+                    <Typography textAlign="center" sx={{ color: 'var(--header-title)', m: 1 }}>
                       {page[0]}
                     </Typography>
                   </MenuItem>
@@ -98,7 +98,7 @@ export const NavMenu: React.FC = () => {
                 <Link to={page[1].toLowerCase()} key={page[1]} style={{ textDecoration: 'none' }}>
                   <Button
                     onClick={handleCloseNavMenu}
-                    sx={{ my: 2, color: '#000000', display: 'block' }}
+                    sx={{ my: 2, color: 'var(--header-title)', display: 'block' }}
                   >
                     {page[0]}
                   </Button>

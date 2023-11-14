@@ -9,6 +9,7 @@ interface AutocompleteProps {
 }
 
 export const renderAutocomplete = ({ type, label, options, isXs, onDeviceChange }: AutocompleteProps) => {
+
   return (
     <Autocomplete
       disablePortal={true}
@@ -21,14 +22,14 @@ export const renderAutocomplete = ({ type, label, options, isXs, onDeviceChange 
       sx={{
         '& .MuiOutlinedInput-root': {
           '& fieldset': {
-            borderColor: '#F6DE01',
-            color: '#F6DE01',
+            borderColor: 'var(--border-color)',
+            color: 'var(--border-color)',
           },
           '&:hover fieldset': {
-            borderColor: '#F6DE01',
+            borderColor: 'var(--border-color)',
           },
           '&.Mui-focused fieldset': {
-            borderColor: '#F6DE01',
+            borderColor: 'var(--border-color)',
           },
         },
       }}

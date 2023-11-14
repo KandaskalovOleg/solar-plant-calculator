@@ -1,8 +1,13 @@
+:root {
+  --header-title: #333333;
+  --border-color: #F6DE01;
+}
+
 $desktop-screen: 900px;
 $headerHeight-desktop: 64px;
 $headerHeight-mobile: 48px;
 
-$primary-background: #F6DE01; //F9D32E
+$primary-background: #F6DE01; //F9D32E 
 $secondary-background: #00843D;
 
 $primary-text: #000000;

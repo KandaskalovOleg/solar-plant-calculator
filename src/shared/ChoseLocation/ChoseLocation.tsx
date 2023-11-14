@@ -156,14 +156,14 @@ export const ChoseLocation: React.FC<ChoseLocationProps> = ({
             sx={{
               '& .MuiOutlinedInput-root': {
                 '& fieldset': {
-                  borderColor: '#F6DE01',
-                  color: '#F6DE01',
+                  borderColor: 'var(--border-color)',
+                  color: 'var(--border-color)',
                 },
                 '&:hover fieldset': {
-                  borderColor: '#F6DE01',
+                  borderColor: 'var(--border-color)',
                 },
                 '&.Mui-focused fieldset': {
-                  borderColor: '#F6DE01',
+                  borderColor: 'var(--border-color)',
                 },
               },
             }}
