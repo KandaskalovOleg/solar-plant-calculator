@@ -1,14 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import RadioGroup from '@mui/material/RadioGroup';
 import Typography from '@mui/material/Typography';
+import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import './PositionStation.scss';
 import { CustomRadio, CustomSlider } from '../../components/CustomMui/Custom';
 
-
 interface PositionProps {
   isXs: boolean;
+  position: {
+    panelOrientation: 'portrait' | 'landscape';
+    azimuth: number;
+    panelTilt: number;
+  };
+  onPositionChange: (type: 'panelOrientation' | 'azimuth' | 'panelTilt', value: number | number[] | string) => void;
 }
 
 const azimutMarks = [
@@ -33,16 +39,27 @@ const tiltMarks = [
   },
 ];
 
-export const PositionStation: React.FC<PositionProps> = ({ isXs }) => {
+export const PositionStation: React.FC<PositionProps> = ({ isXs, position, onPositionChange }) => {
   const { t } = useTranslation();
-  const [panelOrientation, setPanelOrientation] = useState('portrait');
-  const [azimuth, setAzimuth] = useState(180);
-  const [panelTilt, setPanelTilt] = useState(30);
+  const [azimuth, setAzimuth] = React.useState(position.azimuth);
+  const [panelTilt, setPanelTilt] = React.useState(position.panelTilt);
+  const [customAzimuth, setCustomAzimuth] = React.useState<string>('');
+
+  const handleCustomAzimuthChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCustomAzimuth(event.target.value);
+  };
 
   const handleOrientationChange = () => {
-    setPanelOrientation((prevOrientation) =>
-      prevOrientation === 'landscape' ? 'portrait' : 'landscape'
-    );
+    onPositionChange('panelOrientation', 
+      position.panelOrientation === 'landscape' ? 'portrait' : 'landscape');
+  };
+
+  const handleCommittedAzimuthChange = (_event: React.SyntheticEvent | Event, newValue: number | number[]) => {
+    onPositionChange('azimuth', newValue);
+  };
+
+  const handleCommittedTiltChange = (_event: React.SyntheticEvent | Event, newValue: number | number[]) => {
+    onPositionChange('panelTilt', newValue);
   };
 
   const handleAzimuthChange = (_event: Event, newValue: number | number[]) => {
@@ -69,7 +86,7 @@ export const PositionStation: React.FC<PositionProps> = ({ isXs }) => {
           <RadioGroup
             aria-label="panel-orientation"
             name="panel-orientation"
-            value={panelOrientation}
+            value={position.panelOrientation}
             onChange={handleOrientationChange}
             row
           >
@@ -86,12 +103,21 @@ export const PositionStation: React.FC<PositionProps> = ({ isXs }) => {
           </RadioGroup>
         </div>
         <div className='parameter-station'>
-          <Typography component="p">
-            {t('position.angle')}
-          </Typography>
+          <div>
+            <Typography component="p">
+              {t('position.angle')}
+            </Typography>
+            <TextField
+              variant="standard"
+              size='small'
+              value={customAzimuth}
+              onChange={handleCustomAzimuthChange}
+            />
+          </div>
           <CustomSlider
             value={azimuth}
             onChange={handleAzimuthChange}
+            onChangeCommitted={handleCommittedAzimuthChange}
             size={isXs ? 'small' : 'medium'}
             min={0}
             max={360}
@@ -111,6 +137,7 @@ export const PositionStation: React.FC<PositionProps> = ({ isXs }) => {
           <CustomSlider
             value={panelTilt}
             onChange={handleTiltChange}
+            onChangeCommitted={handleCommittedTiltChange}
             size={isXs ? 'small' : 'medium'}
             min={0}
             max={90}
@@ -137,9 +164,9 @@ export const PositionStation: React.FC<PositionProps> = ({ isXs }) => {
           <div className="compass-label c-ne">NE</div>
         </div>
         <div className='panels'>
-          <img className='panel-img' style={panelStyle} src={`/solar-plant-${panelOrientation}.svg`} alt="panels" />
-          <img className='panel-img' style={panelStyle} src={`/solar-plant-${panelOrientation}.svg`} alt="panels" />
-          <img className='panel-img' style={panelStyle} src={`/solar-plant-${panelOrientation}.svg`} alt="panels" />
+          <img className='panel-img' style={panelStyle} src={`/solar-plant-${position.panelOrientation}.svg`} alt="panels" />
+          <img className='panel-img' style={panelStyle} src={`/solar-plant-${position.panelOrientation}.svg`} alt="panels" />
+          <img className='panel-img' style={panelStyle} src={`/solar-plant-${position.panelOrientation}.svg`} alt="panels" />
           <img className='sun-img' src="/sun.svg" alt="sun" />
         </div>
       </div>

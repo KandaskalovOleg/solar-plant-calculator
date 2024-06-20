@@ -14,12 +14,27 @@ interface SelectedDevices {
   quantity: string | null;
 }
 
+interface PositionStation {
+  panelOrientation: 'portrait' | 'landscape';
+  azimuth: number;
+  panelTilt: number;
+}
+
 export const SimpleCalculator: React.FC = () => {
   const { t } = useTranslation();
 
   const [coordinates, setCoordinates] = React.useState<{ lat: number; lng: number } | null>(null);
-  const [selectedDevices, setSelectedDevices] = React.useState<SelectedDevices>({ inverter: null, panel: null, quantity: null });
-  
+  const [selectedDevices, setSelectedDevices] = React.useState<SelectedDevices>({ 
+    inverter: null, 
+    panel: null, 
+    quantity: null 
+  });
+  const [selectedPosition, setSelectedPosition] = React.useState<PositionStation>({
+    panelOrientation: 'portrait',
+    azimuth: 180,
+    panelTilt: 30,
+  });
+
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -38,7 +53,7 @@ export const SimpleCalculator: React.FC = () => {
     setCenter(coordinates);
   }, []);
 
-  console.log(coordinates, selectedDevices);
+  console.log(coordinates, selectedDevices,selectedPosition);
 
   return (
     <div className='simple-calculator'>
@@ -64,6 +79,13 @@ export const SimpleCalculator: React.FC = () => {
       />
       <PositionStation 
         isXs={isXs}
+        position={selectedPosition}
+        onPositionChange={(type, value) => {
+          setSelectedPosition((prevState) => ({
+            ...prevState,
+            [type]: value,
+          }))
+        }}
       />
     </div>
   );
